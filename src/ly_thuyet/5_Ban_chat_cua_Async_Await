@@ -1,0 +1,2 @@
++ Async/await là một cú pháp trong JavaScript được giới thiệu trong ES2017 (ES8) để làm việc với mã bất đồng bộ một cách dễ đọc và tương tự như mã đồng bộ. 
++ Nó giúp xử lý các tác vụ bất đồng bộ trong một dạng tương tự như việc sử dụng các khối mã đồng bộ, nhưng mà vẫn đảm bảo rằng các tác vụ bất đồng bộ được thực hiện mà không chặn luồng thực thi.

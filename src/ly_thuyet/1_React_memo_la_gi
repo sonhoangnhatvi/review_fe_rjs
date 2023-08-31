@@ -1,0 +1,6 @@
+- React.memo là một thành phần của thư viện React được sử dụng để tối ưu hóa hiệu suất của ứng dụng bằng cách giảm số lượng lần render không cần thiết. 
+- Khi bạn sử dụng React.memo để bao bọc một thành phần, nó sẽ tự động kiểm tra các props truyền vào và quyết định xem liệu thành phần cần được render lại hay không.
+- Lưu ý rằng React.memo chỉ so sánh các props bằng cách so sánh nông (shallow comparison). 
+  + Điều này có nghĩa là nếu bạn truyền vào một đối tượng props mà có cùng giá trị nhưng không phải là cùng một tham chiếu, React.memo sẽ không nhận biết được sự thay đổi. Điều này có thể dẫn đến việc không render lại thành phần khi bạn mong đợi.
+  + Xem video và cho ra ví dụ
+  

@@ -1,0 +1,25 @@
++ Trong React, useMemo là một hook được sử dụng để tối ưu hóa hiệu suất bằng cách lưu giữ kết quả của một hàm tính toán (thường là một giá trị) và chỉ tính toán lại khi các giá trị dependencies thay đổi.
+
++ Khi bạn tính toán một giá trị trong một thành phần React và giá trị đó phụ thuộc vào các biến hoặc props nào đó, bạn có thể sử dụng useMemo để đảm bảo rằng tính toán chỉ được thực hiện khi cần thiết và không bị thực hiện lại mỗi lần thành phần render.
+
++ Ex :
+
+import React, { useMemo, useState } from 'react';
+
+function MyComponent({ list }) {
+  const expensiveCalculation = useMemo(() => {
+    console.log('Expensive calculation performed');
+    return list.map(item => item * 2);
+  }, [list]);
+
+  return (
+    <div>
+      <p>Original List: {list.join(', ')}</p>
+      <p>Transformed List: {expensiveCalculation.join(', ')}</p>
+    </div>
+  );
+}
+
++ Lưu ý rằng useMemo thường được sử dụng cho các tính toán tốn kém về thời gian hoặc tài nguyên. Nếu tính toán không tốn nhiều thời gian hoặc không có tác động đáng kể đến hiệu suất, việc sử dụng useMemo có thể không cần thiết và thậm chí có thể dẫn đến mã phức tạp hơn.
+
++ useMemo là một cách để tối ưu hóa hiệu suất của các thành phần React bằng cách giữ lại kết quả của các tính toán và tính toán lại chỉ khi cần thiết.

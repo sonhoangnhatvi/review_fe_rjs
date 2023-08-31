@@ -1,0 +1,27 @@
++ Trong React, useCallback là một hook được sử dụng để tối ưu hóa hiệu suất của các thành phần bằng cách lưu giữ phiên bản memoized (ghi nhớ) của một hàm callback. Điều này đảm bảo rằng hàm callback chỉ được tạo lại khi các giá trị dependencies của nó thay đổi.
+
++ Khi bạn truyền các hàm callback vào các thành phần con, như các props, các hàm đó thường sẽ được tạo lại mỗi khi thành phần cha render lại. Việc sử dụng useCallback giúp bạn tránh việc tạo lại các hàm callback không cần thiết, đặc biệt khi các hàm này không thay đổi giữa các lần render.
+
+Ví dụ:
+
+import React, { useCallback, useState } from 'react';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log('Button clicked');
+    setCount(prevCount => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment Count</button>
+    </div>
+  );
+}
+
++ useCallback thường được kết hợp với việc sử dụng React.memo cho các thành phần con để đảm bảo rằng các hàm callback không bị tạo lại và không dẫn đến việc render lại không cần thiết của các thành phần con.
+
++ Tóm lại, useCallback là một cách để tối ưu hóa hiệu suất của các thành phần React bằng cách lưu giữ phiên bản memoized của các hàm callback và tạo lại chúng chỉ khi cần thiết.

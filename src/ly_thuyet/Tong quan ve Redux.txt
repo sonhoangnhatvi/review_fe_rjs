@@ -1,0 +1,5 @@
+* Redux là công cụ quản lý các biến global state trong ứng dụng React.
+* Redux bao gồm 3 thành phần chính
+    + Store: Quản lý state dùng chung.
+    + Action: Phương thức sự kiện event.
+    + Reducer: Cập nhật state.

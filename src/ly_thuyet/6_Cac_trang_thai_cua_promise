@@ -1,0 +1,28 @@
++ Một Promise trong JavaScript có ba trạng thái chính:
+
+1. Pending (Đang chờ): Đây là trạng thái ban đầu khi một Promise được tạo. Trong trạng thái này, Promise đang chờ để thực hiện hoặc bị từ chối.
+
+2. Fulfilled (Đã hoàn thành): Khi một Promise hoàn thành một cách thành công, nó chuyển sang trạng thái đã hoàn thành. Trong trạng thái này, Promise trả về một giá trị được xác định, và các .then handlers được gắn với Promise sẽ được gọi.
+
+3. Rejected (Đã từ chối): Nếu một lỗi xảy ra trong quá trình thực thi Promise, hoặc nếu Promise bị từ chối từ chối một cách rõ ràng thông qua việc gọi hàm reject(), nó sẽ chuyển sang trạng thái đã từ chối. Trong trạng thái này, Promise trả về một lỗi hoặc một lý do cụ thể cho sự từ chối, và các .catch handlers hoặc .then handlers thứ hai được gắn với Promise sẽ được gọi.
+
+Ví dụ:
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const randomValue = Math.random();
+    if (randomValue > 0.5) {
+      resolve(randomValue); // Hoàn thành với giá trị ngẫu nhiên nếu randomValue > 0.5
+    } else {
+      reject(new Error('Random value too small')); // Từ chối nếu randomValue <= 0.5
+    }
+  }, 1000);
+});
+
+myPromise
+  .then(result => {
+    console.log('Fulfilled:', result);
+  })
+  .catch(error => {
+    console.error('Rejected:', error.message);
+  });

@@ -1,0 +1,8 @@
+
+Trong ReactJS, có một số cách để xử lý bất đồng bộ, tùy thuộc vào tình huống cụ thể và yêu cầu của ứng dụng. Dưới đây là một số cách phổ biến để xử lý bất đồng bộ trong ReactJS:
+
+1. Callbacks: Sử dụng các hàm callback để thực hiện các tác vụ bất đồng bộ. Tuy nhiên, việc sử dụng callback có thể dẫn đến callback hell (hiện tượng lồng nhiều callbacks khó đọc và bảo trì).
+
+2. Promises: Sử dụng Promises để quản lý các tác vụ bất đồng bộ và xử lý lỗi một cách dễ dàng hơn so với callbacks.
+
+3. Async/Await: Sử dụng cú pháp async và await để viết mã bất đồng bộ một cách tương tự như viết mã đồng bộ. Điều này làm cho việc xử lý bất đồng bộ trở nên rõ ràng và dễ đọc hơn.
